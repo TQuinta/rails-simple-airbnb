@@ -1,10 +1,15 @@
-<h1>All flats</h1>
+<div class="container">
+  <h1>All flats (<%= @flats.size %>)</h1>
 
-<% @flats.each do |flat|  %>
-<p><%= link_to flat.name, flat_path(flat) %> - Price: <%= flat.price_per_night %> - No. Guests <%= flat.number_of_guests %></p>
-<p><%= flat.description %></p>
-<%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: "Are you sure?" } %>
-<br>
-<% end %>
-
-<%= link_to "create new flat here", new_flat_path %>
+  <div class="tiles">
+    <% @flats.each do |flat|  %>
+      <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" alt="">
+      <h2><%= link_to flat.name, flat_path(flat) %> - Price: <%= flat.price_per_night %> - No. Guests <%= flat.number_of_guests %></h2>
+      <p><%= flat.description %></p>
+      <%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "create new flat here", new_flat_path %>
+</div>
