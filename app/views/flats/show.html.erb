@@ -1,0 +1,8 @@
+<h1><%= @flat.name %></h1>
+<h2>Price: <%= @flat.price_per_night %>, number of guests: <%= @flat.number_of_guests %></h2>
+<p><%= @flat.description %></p>
+<p>Address: <%= @flat.address %></p>
+
+<p><%= link_to "Edit this flat",edit_flat_path(@flat) %></p>
+
+<p><%= link_to "return to all flats",flats_path %></p>
